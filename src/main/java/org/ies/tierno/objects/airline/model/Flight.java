@@ -13,4 +13,18 @@ public class Flight {
     private String destination;
     private String gate;
     private Passenger[] passengers;
+
+    public void showInfo(){
+        System.out.println("Vuelo " + number+origin+destination+". Puerta "+gate+" .");
+        for (var passenger:passengers){
+            passenger.showInfo();
+            System.out.println(", ");
+        }
+    }
+
+     /*public Passenger hasPassenger(String nif){
+
+     }*/
+
+
 }

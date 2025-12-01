@@ -11,4 +11,8 @@ public class Passenger {
     private String name;
     private String surname;
     private int seat;
+
+    public void showInfo() {
+        System.out.println(surname+", "+name+" ("+nif+") ");
+    }
 }
