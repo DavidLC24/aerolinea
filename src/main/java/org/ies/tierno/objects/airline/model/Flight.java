@@ -14,17 +14,29 @@ public class Flight {
     private String gate;
     private Passenger[] passengers;
 
-    public void showInfo(){
-        System.out.println("Vuelo " + number+origin+destination+". Puerta "+gate+" .");
-        for (var passenger:passengers){
-            passenger.showInfo();
-            System.out.println(", ");
+    public boolean hasPassenger(String nif) {
+        for (var passenger : passengers) {
+            if (passenger.getNif().equals(nif)) {
+                return true;
+            }
         }
+        return false;
     }
 
-     /*public Passenger hasPassenger(String nif){
+    public Passenger findPassenger(String nif) {
+        for (var passenger : passengers) {
+            if (passenger.getNif().equals(nif)) {
+                return passenger;
+            }
+        }
+        return null;
+    }
 
-     }*/
-
-
+    public void showInfo() {
+        System.out.println("Vuelo " + number + " " + origin + " - " + destination + ". Puerta: " + gate + ". Pasajeros");
+        for (var passenger : passengers) {
+            System.out.print("    ");
+            passenger.showInfo();
+        }
+    }
 }
