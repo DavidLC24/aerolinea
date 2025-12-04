@@ -10,6 +10,7 @@ import java.util.Objects;
 public class Airline {
     private String name;
     private Flight[] flights;
+
     public void showInfo() {
         System.out.println("Aerolínea " + name + ". Vuelos: ");
         for (var flight : flights) {
